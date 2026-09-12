@@ -1,0 +1,234 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #f4f5fa;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #1a1a2e;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #4a47a3 0%, #6c63c9 100%);
+  color: white;
+  padding: 36px 20px 44px;
+  text-align: center;
+}
+
+.app-header h1 {
+  margin: 0 0 6px;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.app-header .subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.container {
+  max-width: 950px;
+  margin: -28px auto 40px;
+  padding: 0 20px;
+}
+
+/* Stats */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 14px 8px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-number {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.stat-applied .stat-number { color: #2952cc; }
+.stat-interview .stat-number { color: #a56800; }
+.stat-offer .stat-number { color: #1a7a3a; }
+.stat-rejected .stat-number { color: #c92a2a; }
+.stat-total .stat-number { color: #4a47a3; }
+
+/* Form */
+.application-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  margin-bottom: 18px;
+}
+
+.application-form input,
+.application-form select {
+  flex: 1 1 150px;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e8;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.application-form input:focus,
+.application-form select:focus {
+  border-color: #4a47a3;
+}
+
+.application-form button {
+  padding: 10px 20px;
+  background: #4a47a3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.application-form button:hover {
+  background: #3a3780;
+}
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 2 1 220px;
+  padding: 9px 12px;
+  border: 1px solid #e0e0e8;
+  border-radius: 8px;
+  font-size: 0.88rem;
+}
+
+.filter-select {
+  flex: 1 1 140px;
+  padding: 9px 12px;
+  border: 1px solid #e0e0e8;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  background: white;
+}
+
+/* Table */
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+.application-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.application-table th,
+.application-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f4;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.application-table th {
+  background: #f7f7fb;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.application-table tbody tr:hover {
+  background: #fafafd;
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.status-applied { background: #e0eaff; color: #2952cc; }
+.status-interview { background: #fff3cd; color: #a56800; }
+.status-offer { background: #d4f7dc; color: #1a7a3a; }
+.status-rejected { background: #ffe0e0; color: #c92a2a; }
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid #e57373;
+  color: #e57373;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+
+.delete-btn:hover {
+  background: #e57373;
+  color: white;
+}
+
+.empty-state {
+  text-align: center;
+  color: #888;
+  padding: 40px 20px;
+  background: white;
+}
+
+.loading-text {
+  text-align: center;
+  color: #888;
+  padding: 30px;
+}
+
+.error-message {
+  color: #c92a2a;
+  background: #ffe0e0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 600px) {
+  .stats-bar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
